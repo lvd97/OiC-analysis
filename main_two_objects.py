@@ -13,7 +13,7 @@ animal_list= [417271, 417272] #Fill in the animal numbers (video titles without 
 
 for animal in animal_list:
     animal = str(animal)
-    df = pd.read_csv('/Volumes/Samsung_T5/DLC/short_videos_pilot_testing/' +
+    df = pd.read_csv('directory' +
                      animal+'DLC_resnet50_extra2Jun22shuffle1_1000000.csv', skiprows=2)
     coords_object1 = pd.read_csv(       #Specify were the coordinates of the objects can be found, name them e.g. 'animalnumber_object1.csv'
         '/Users/lindevandongen/Documents/Object-in-Context/Coordinates_objects_testing_pilot/'+animal+'_bulb.csv')
