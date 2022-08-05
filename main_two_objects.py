@@ -13,18 +13,18 @@ animal_list= [417271, 417272] #Fill in the animal numbers (video titles without 
 
 for animal in animal_list:
     animal = str(animal)
-    df = pd.read_csv('directory' +
-                     animal+'DLC_resnet50_extra2Jun22shuffle1_1000000.csv', skiprows=2)
+    df = pd.read_csv('dir_to_DLC_files' +
+                     animal+'name_of_DLC_file.csv', skiprows=2)
     coords_object1 = pd.read_csv(       #Specify were the coordinates of the objects can be found, name them e.g. 'animalnumber_object1.csv'
-        '/Users/lindevandongen/Documents/Object-in-Context/Coordinates_objects_testing_pilot/'+animal+'_bulb.csv')
+        'dir_to_object_coordinates'+animal+'_object1.csv')
     coords_object2 = pd.read_csv(                   
-        '/Users/lindevandongen/Documents/Object-in-Context/Coordinates_objects_testing_pilot/'+animal+'_jar.csv')                               
-    video = '/Volumes/Samsung_T5/DLC/short_videos_pilot_testing/'+animal+'.mp4' #Specify where the behavioural videos can be found
-    outpath_video = '/Users/lindevandongen/Downloads/' #Specify the directory where the DLC videos are saved
+        'dir_to_object_coordinates'+animal+'_object2.csv')                               
+    video = 'dir_to_video'+animal+'.mp4' #Specify where the behavioural videos can be found
+    outpath_video = 'dir' #Specify the directory where the DLC videos are saved
 
     df = get_info(animal, p, offset, df, fps, coords_object1,
                   coords_object2, video, outpath_video) #Also specify 'make_video=False' if you do not want the videos to be created 
     results = aggregated_info(df, fps, results, animal, inter)
 
 results.to_csv(
-    '/Users/lindevandongen/Downloads/hoi.csv', index=False) #Specify the directory where the results are saved 
+    'dir_and_file_name.csv', index=False) #Specify the directory where the results are saved 
