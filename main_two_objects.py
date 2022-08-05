@@ -1,15 +1,15 @@
 import pandas as pd
 from exploration_estimation_two_objects import aggregated_info, get_info
 
-p =0.4    #Set here the p-cutoff
-offset = 5
-fps = 12.5
-inter = 300 #The table with results will also specify the total exploration time up until this frame number
+p = 0   #Set here the p-cutoff
+offset = 0
+fps = 0
+inter = 0 #The table with results will also specify the total exploration time up until this frame number
 
 results = pd.DataFrame(
     columns=['animal', 'object1', 'object2', 'inter_object1', 'inter_object2', 'l_average'])
 
-animal_list= [417271, 417272] #Fill in the animal numbers (video titles without '.mp4') of the videos that should be analysed 
+animal_list= [] #Fill in the animal numbers (video titles without '.mp4') of the videos that should be analysed 
 
 for animal in animal_list:
     animal = str(animal)
